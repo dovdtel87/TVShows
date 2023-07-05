@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TVShows</string>
+    <string name="error">There was an error loading the list of products</string>
 </resources>
