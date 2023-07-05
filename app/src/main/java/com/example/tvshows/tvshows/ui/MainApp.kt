@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.tvshows.tvshows.ui.list.screen.ListShowsScreen
 import com.example.tvshows.ui.theme.TVShowsTheme
 
 @Composable
@@ -12,7 +13,7 @@ fun MainApp() {
     TVShowsTheme {
         NavHost(navController = navController, startDestination = "list") {
             composable("list") {
-                //ListShowsScreen()
+                ListShowsScreen()
             }
         }
     }
