@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "API_URL", '"https://api.themoviedb.org/3/"'
+        buildConfigField "String", "API_KEY", API_KEY
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -25,7 +25,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "API_URL", "${project.API_URL_TEST}"
+        }
+
         release {
+            buildConfigField "String", "API_URL", "${project.API_URL_PRODUCTION}"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
