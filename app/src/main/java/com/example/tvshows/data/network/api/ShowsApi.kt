@@ -2,9 +2,16 @@ package com.example.tvshows.data.network.api
 
 import com.example.tvshows.data.network.model.ShowsResponseDto
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface ShowsApi {
 
-    @GET("tv/top_rated?api_key=25a8f80ba018b52efb64f05140f6b43c&langu%20age=en-US")
-    suspend fun fetchShows() : ShowsResponseDto
+    companion object {
+        const val DEFAULT_LANGUAGE = "en-US"
+    }
+    @GET("tv/top_rated")
+    suspend fun fetchShows(
+        @Query("language") language: String = DEFAULT_LANGUAGE,
+        @Query("api_key") key: String = "25a8f80ba018b52efb64f05140f6b43c"
+    ) : ShowsResponseDto
 }
