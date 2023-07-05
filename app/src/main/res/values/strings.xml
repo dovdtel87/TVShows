@@ -3,4 +3,6 @@
     <string name="error">There was an error loading the list of shows</string>
     <string name="retry">Retry</string>
     <string name="tv_shows">TV Shows</string>
+    <string name="show_image">Show Image</string>
+
 </resources>
