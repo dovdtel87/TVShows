@@ -11,8 +11,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,13 +25,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.example.tvshows.R
 import com.example.tvshows.data.model.Show
 
@@ -38,30 +39,30 @@ fun ListShows(
 ) {
     val lazyListState = rememberLazyListState()
 
-    LazyColumn(
-        Modifier.fillMaxSize(),
-        state = lazyListState,
+    Box(Modifier.fillMaxSize()) {
+        LazyColumn(
+            Modifier.fillMaxSize(),
+            state = lazyListState,
 
-        ) {
-        item {
-            Title()
-        }
-        items(shows) {
-            CardContent(show = it)
-        }
-        item {
-            Box(
-                modifier = Modifier.fillMaxWidth(),
-                contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = "Short",
-                    style = MaterialTheme.typography.displaySmall.copy(fontSize = 30.sp),
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(start = 8.dp, top = 8.dp, end = 8.dp)
-                )
+            item {
+                Title()
+            }
+            items(shows) {
+                CardContent(show = it)
             }
         }
+        FloatingActionButton(
+            onClick = {
+                // Handle FAB click
+            },
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(16.dp),
+            content = {
+                Icon(Icons.Filled.List, contentDescription = "Add")
+            }
+        )
     }
 }
 
@@ -81,7 +82,6 @@ private fun Title(){
         )
     }
 }
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 private fun CardContent(
     show: Show
