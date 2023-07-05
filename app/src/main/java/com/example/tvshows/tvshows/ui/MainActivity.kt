@@ -1,4 +1,4 @@
-package com.example.tvshows
+package com.example.tvshows.tvshows.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
