@@ -1,4 +1,4 @@
-package com.example.tvshows.tvshows
+package com.example.tvshows.tvshows.ui
 
 import androidx.lifecycle.ViewModel
 
