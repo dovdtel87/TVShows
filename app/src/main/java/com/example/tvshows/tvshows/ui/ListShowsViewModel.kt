@@ -42,6 +42,11 @@ class ListShowsViewModel @Inject constructor(
         }
     }
 
+    fun shortList() {
+        listShows = listShows.sortedBy { it.name }
+        updateListState()
+    }
+
     private fun showLoading() {
         _state.update {
             ListScreenState.Loading

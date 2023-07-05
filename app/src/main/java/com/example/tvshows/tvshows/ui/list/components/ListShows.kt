@@ -35,7 +35,7 @@ import com.example.tvshows.data.model.Show
 @Composable
 fun ListShows(
     shows: List<Show>,
-    onShortList: (String) -> Unit
+    onShortList: () -> Unit
 ) {
     val lazyListState = rememberLazyListState()
 
@@ -54,7 +54,7 @@ fun ListShows(
         }
         FloatingActionButton(
             onClick = {
-                // Handle FAB click
+                onShortList()
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
