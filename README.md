@@ -37,6 +37,12 @@ Three different types of models have been defined:
 - `Dtos`: e.g., `ShowDto`, to handle data received from the API.
 - Domain model: e.g., `Show`, to handle the domain data.
 - UI model: e.g., `ShowUI`, to handle the visual representation of the data.
+
+Structure of the project:
+- ![Screenshot 2023-07-07 at 23 16 00](https://github.com/dovdtel87/TVShows/assets/2633423/25d6b548-bf6d-47a3-be35-7feb72502107)
+
+## DI
+I have chosen Dagger as the framework for Dependency Injection instead of a Service Locator because it enables better scalability of the app and provides compile-time warnings if a dependency is not correctly initialized.
  
 ## Modularization
 Given the simplicity of this app a mono-module approach has been selected. Although for a bigger production apps a multi module approach should be selected.
@@ -67,5 +73,3 @@ Also, a simple UI test to ensure the list is displayed on the screen has been pr
 ## Future Features (pagination)
 It is not implemented, but a nice following feature that could be implemented with more time is pagination.
 The api provides a pagination structure, it could be implemented a feature to load more shows implementing a InfiniteListHandler. When the user is about to reach the end of the list, a new call to fetchMoreUsers with the updated number of the page should be call. The returned list will be added to the existing one.
-
-    
