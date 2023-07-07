@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.tvshows.R
 import com.example.tvshows.data.model.Show
 import com.example.tvshows.tvshows.domain.usecases.FetchShowsUseCase
+import com.example.tvshows.tvshows.ui.model.ShowUI
 import com.example.tvshows.tvshows.ui.state.ListScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -55,7 +56,7 @@ class ListShowsViewModel @Inject constructor(
 
     private fun updateListState() {
         _state.update {
-            ListScreenState.Content(listShows)
+            ListScreenState.Content( listShows.map { ShowUI(it.id,it.name, it.url) })
         }
     }
 }

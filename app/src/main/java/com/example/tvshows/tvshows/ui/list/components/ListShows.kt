@@ -30,11 +30,11 @@ import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.example.tvshows.R
-import com.example.tvshows.data.model.Show
+import com.example.tvshows.tvshows.ui.model.ShowUI
 
 @Composable
 fun ListShows(
-    shows: List<Show>,
+    shows: List<ShowUI>,
     onShortList: () -> Unit
 ) {
     val lazyListState = rememberLazyListState()
@@ -84,7 +84,7 @@ private fun Title(){
 }
 @Composable
 private fun CardContent(
-    show: Show
+    show: ShowUI
 ) {
     Card(
         modifier = Modifier
@@ -126,15 +126,15 @@ private fun CardContent(
 @Preview(showBackground = true)
 @Composable
 fun CardContentPreview() {
-    CardContent(Show("1","Friends", "aUrl"))
+    CardContent(ShowUI("1","Friends", "aUrl"))
 }
 
 @Preview(showBackground = true)
 @Composable
 fun ListShowsPreview() {
-    ListShows(listOf<Show>(
-        Show("1","Friends", "aUrl"),
-        Show("2","Superman", "aUrl"),
-        Show("3","The Simpsons", "aUrl3")
+    ListShows(listOf<ShowUI>(
+        ShowUI("1","Friends", "aUrl"),
+        ShowUI("2","Superman", "aUrl"),
+        ShowUI("3","The Simpsons", "aUrl3")
     )) {}
 }
