@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.Card
@@ -22,6 +23,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -42,9 +45,8 @@ fun ListShows(
     Box(Modifier.fillMaxSize()) {
         LazyColumn(
             Modifier.fillMaxSize(),
-            state = lazyListState,
-
-            ) {
+            state = lazyListState
+        ) {
             item {
                 Title()
             }
@@ -100,11 +102,12 @@ private fun CardContent(
                     .data(show.url)
                     .crossfade(true)
                     .build(),
+                contentScale = ContentScale.Crop,
                 contentDescription = stringResource(R.string.show_image),
                 loading = {
                     CircularProgressIndicator(modifier = Modifier.size(16.dp))
                 },
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier.size(70.dp).clip(CircleShape)
             )
 
             Column(
@@ -113,7 +116,7 @@ private fun CardContent(
                 content = {
                     Text(
                         text = show.name,
-                        style = MaterialTheme.typography.headlineMedium.copy(
+                        style = MaterialTheme.typography.headlineSmall.copy(
                             fontWeight = FontWeight.ExtraBold
                         )
                     )
