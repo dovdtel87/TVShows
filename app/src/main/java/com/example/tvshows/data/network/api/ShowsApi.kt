@@ -12,6 +12,7 @@ interface ShowsApi {
     }
     @GET("tv/top_rated")
     suspend fun fetchShows(
+        @Query("page") page: Int = 1,
         @Query("language") language: String = DEFAULT_LANGUAGE,
         @Query("api_key") key: String = BuildConfig.API_KEY
     ) : ShowsResponseDto
