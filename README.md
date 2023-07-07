@@ -71,5 +71,4 @@ Also, a simple UI test to ensure the list is displayed on the screen has been pr
 - To create a more complex app, navigation should be implemented, although for this project, the skeleton of navigation has been provided.
 
 ## Future Features (pagination)
-It is not implemented, but a nice following feature that could be implemented with more time is pagination.
-The api provides a pagination structure, it could be implemented a feature to load more shows implementing a InfiniteListHandler. When the user is about to reach the end of the list, a new call to fetchMoreUsers with the updated number of the page should be call. The returned list will be added to the existing one.
+While it is not currently implemented, a useful feature that could be added with more time is pagination. The API already provides a pagination structure, and it would be possible to implement a feature for loading more shows by utilizing an InfiniteListHandler. When the user is approaching the end of the list, a new call to fetchMoreUsers should be made with the updated page number. The returned list can then be added to the existing one.
