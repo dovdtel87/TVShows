@@ -88,6 +88,6 @@ class ListShowsViewModelTest {
             ShowUI("2", "Show 2", "/aUrl2"),
             ShowUI("3", "Show 3", "/aUrl3")
         )
-        assertEquals(ListScreenState.Content(expectedShows), viewModel.state.value)
+        assertEquals(ListScreenState.Content(expectedShows, true), viewModel.state.value)
     }
 }

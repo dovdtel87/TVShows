@@ -5,6 +5,6 @@ import com.example.tvshows.tvshows.ui.model.ShowUI
 
 sealed class ListScreenState {
     object Loading : ListScreenState()
-    data class Content(val shows: List<ShowUI>) : ListScreenState()
+    data class Content(val shows: List<ShowUI>, val isShorted: Boolean = false) : ListScreenState()
     data class Error(@StringRes val errorMessage: Int) : ListScreenState()
 }

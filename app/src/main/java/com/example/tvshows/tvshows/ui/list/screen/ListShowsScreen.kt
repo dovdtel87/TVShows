@@ -27,7 +27,8 @@ fun ListShowsScreen(
 
         is ListScreenState.Content -> {
             ListShows(
-                shows = uiState.shows
+                shows = uiState.shows,
+                isShorted = uiState.isShorted
             ) {
                 viewModel.shortList()
             }

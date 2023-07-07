@@ -45,7 +45,7 @@ class ListShowsViewModel @Inject constructor(
 
     fun shortList() {
         listShows = listShows.sortedBy { it.name }
-        updateListState()
+        updateListState(true)
     }
 
     private fun showLoading() {
@@ -54,9 +54,9 @@ class ListShowsViewModel @Inject constructor(
         }
     }
 
-    private fun updateListState() {
+    private fun updateListState(isShorted: Boolean = false) {
         _state.update {
-            ListScreenState.Content( listShows.map { ShowUI(it.id,it.name, it.url) })
+            ListScreenState.Content( listShows.map { ShowUI(it.id,it.name, it.url) }, isShorted)
         }
     }
 }

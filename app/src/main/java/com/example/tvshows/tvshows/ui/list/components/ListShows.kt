@@ -38,6 +38,7 @@ import com.example.tvshows.tvshows.ui.model.ShowUI
 @Composable
 fun ListShows(
     shows: List<ShowUI>,
+    isShorted: Boolean,
     onShortList: () -> Unit
 ) {
     val lazyListState = rememberLazyListState()
@@ -54,17 +55,19 @@ fun ListShows(
                 CardContent(show = it)
             }
         }
-        FloatingActionButton(
-            onClick = {
-                onShortList()
-            },
-            modifier = Modifier
-                .align(Alignment.BottomEnd)
-                .padding(16.dp),
-            content = {
-                Icon(Icons.Filled.List, contentDescription = "Add")
-            }
-        )
+        if(!isShorted) {
+            FloatingActionButton(
+                onClick = {
+                    onShortList()
+                },
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(16.dp),
+                content = {
+                    Icon(Icons.Filled.List, contentDescription = "Add")
+                }
+            )
+        }
     }
 }
 
@@ -139,5 +142,5 @@ fun ListShowsPreview() {
         ShowUI("1","Friends", "aUrl"),
         ShowUI("2","Superman", "aUrl"),
         ShowUI("3","The Simpsons", "aUrl3")
-    )) {}
+    ), false) {}
 }
