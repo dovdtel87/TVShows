@@ -132,15 +132,15 @@ private fun CardContent(
 @Preview(showBackground = true)
 @Composable
 fun CardContentPreview() {
-    CardContent(ShowUI("1","Friends", "aUrl"))
+    CardContent(ShowUI(1,"Friends", "aUrl"))
 }
 
 @Preview(showBackground = true)
 @Composable
 fun ListShowsPreview() {
     ListShows(listOf<ShowUI>(
-        ShowUI("1","Friends", "aUrl"),
-        ShowUI("2","Superman", "aUrl"),
-        ShowUI("3","The Simpsons", "aUrl3")
+        ShowUI(1,"Friends", "aUrl"),
+        ShowUI(2,"Superman", "aUrl"),
+        ShowUI(3,"The Simpsons", "aUrl3")
     ), false) {}
 }

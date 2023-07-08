@@ -41,15 +41,15 @@ class ListShowsViewModelTest {
     @Test
     fun `fetchShows should update state to Content when shows are fetched successfully`() = runTest {
         val expectedShows = listOf(
-            Show("1", "Show 1", "/aUrl1"),
-            Show("2", "Show 2", "/aUrl2"),
-            Show("3", "Show 3", "/aUrl3")
+            Show(1, "Show 1", "/aUrl1"),
+            Show(2, "Show 2", "/aUrl2"),
+            Show(3, "Show 3", "/aUrl3")
         )
 
         val expectedShowsUI = listOf(
-            ShowUI("1", "Show 1", "/aUrl1"),
-            ShowUI("2", "Show 2", "/aUrl2"),
-            ShowUI("3", "Show 3", "/aUrl3")
+            ShowUI(1, "Show 1", "/aUrl1"),
+            ShowUI(2, "Show 2", "/aUrl2"),
+            ShowUI(3, "Show 3", "/aUrl3")
         )
 
         coEvery { fetchShowsUseCase.invoke() } returns Result.success(expectedShows)
@@ -74,9 +74,9 @@ class ListShowsViewModelTest {
     @Test
     fun `shortList should update the listShows and state to Content with sorted shows`() {
         val initialShows = listOf(
-            Show("2", "Show 2", "/aUrl2"),
-            Show("3", "Show 3", "/aUrl3"),
-            Show("1", "Show 1", "/aUrl1")
+            Show(2, "Show 2", "/aUrl2"),
+            Show(3, "Show 3", "/aUrl3"),
+            Show(1, "Show 1", "/aUrl1")
         )
         coEvery { fetchShowsUseCase.invoke() } returns Result.success(initialShows)
 
@@ -84,9 +84,9 @@ class ListShowsViewModelTest {
         viewModel.shortList()
 
         val expectedShows = listOf(
-            ShowUI("1", "Show 1", "/aUrl1"),
-            ShowUI("2", "Show 2", "/aUrl2"),
-            ShowUI("3", "Show 3", "/aUrl3")
+            ShowUI(1, "Show 1", "/aUrl1"),
+            ShowUI(2, "Show 2", "/aUrl2"),
+            ShowUI(3, "Show 3", "/aUrl3")
         )
         assertEquals(ListScreenState.Content(expectedShows, true), viewModel.state.value)
     }

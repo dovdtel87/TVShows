@@ -27,9 +27,9 @@ class FetchShowsUseCaseTest {
     @Test
     fun `invoke should return success result with fetched shows`() = runBlocking {
         val expectedShows = listOf(
-            Show("1", "Show 1", "/aUrl1"),
-            Show("2", "Show 2", "/aUrl2"),
-            Show("3", "Show 3", "/aUrl3")
+            Show(1, "Show 1", "/aUrl1"),
+            Show(2, "Show 2", "/aUrl2"),
+            Show(3, "Show 3", "/aUrl3")
         )
 
         coEvery { showsRepository.fetchShows() } returns Result.success(expectedShows)

@@ -33,7 +33,7 @@ class ShowsRepositoryImplTest {
     @Test
     fun `when fetchShows is called and there is a list in the cache it returns that list`() = runBlocking {
 
-        val showsEntityList = listOf(ShowEntity("1", "Batman", "/aUrl1"), ShowEntity("2", "Superman", "/aUrl2"), ShowEntity("3", "Friends", "/aUrl3"))
+        val showsEntityList = listOf(ShowEntity(1, "Batman", "/aUrl1"), ShowEntity(2, "Superman", "/aUrl2"), ShowEntity(3, "Friends", "/aUrl3"))
         coEvery { showsDao.getShows() } returns showsEntityList
 
         val response = showsRepositoryImpl.fetchShows()
@@ -46,7 +46,7 @@ class ShowsRepositoryImplTest {
 
     @Test
     fun `when fetchShows is called and there is no list in the cache it calls the api to fetch it`() = runBlocking {
-        val showsList = listOf(ShowDto("1", "Batman", "/aUrl1"), ShowDto("2", "Superman", "/aUrl2"), ShowDto("3", "Friends", "/aUrl3"))
+        val showsList = listOf(ShowDto(1, "Batman", "/aUrl1"), ShowDto(2, "Superman", "/aUrl2"), ShowDto(3, "Friends", "/aUrl3"))
 
         coEvery { showsDao.getShows() } returns emptyList()
         coEvery { showsApi.fetchShows() } returns ShowsResponseDto(1,10, showsList)

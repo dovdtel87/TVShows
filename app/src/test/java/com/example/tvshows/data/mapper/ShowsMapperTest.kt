@@ -10,9 +10,9 @@ class ShowsMapperTest {
 
     @Test
     fun `map should return the correct list of shows objects`() {
-        val showDto1 = ShowDto("1", "Batman", "/aUrl1")
-        val showDto2 = ShowDto("2", "Superman", "/aUrl2")
-        val showDto3 = ShowDto("3", "Friends", "/aUrl3")
+        val showDto1 = ShowDto(1, "Batman", "/aUrl1")
+        val showDto2 = ShowDto(2, "Superman", "/aUrl2")
+        val showDto3 = ShowDto(3, "Friends", "/aUrl3")
         val showsDto = listOf(showDto1, showDto2, showDto3)
 
         val showList = showsMapper.map(showsDto)
