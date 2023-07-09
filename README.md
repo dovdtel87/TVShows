@@ -61,7 +61,7 @@ It has been used the key provided for using the API. Reading the documentation t
 - Other things taken into account:
   - Dependency Injection: Dagger Hilt is used for dependency injection, making it easier to manage and scale the project.
   - Asynchronous Programming: Coroutines are used for handling asynchronous operations, such as fetching data from the API and performing database operations.
-  - Error Handling: Errors during API calls are handled by displaying an error message in the UI if there are no available products in the database; otherwise, a cached list of products is shown.
+  - Error Handling: Errors during API calls are handled by displaying an error message in the UI if there are no available shows in the database; otherwise, a cached list of shows is shown.
 ## Tests
 Unit tests have been provided for all the layers.
 Also, a simple UI test to ensure the list is displayed on the screen has been provided.

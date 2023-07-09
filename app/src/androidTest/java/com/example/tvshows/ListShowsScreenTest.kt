@@ -21,7 +21,7 @@ import javax.inject.Inject
 @MediumTest
 @HiltAndroidTest
 @OptIn(ExperimentalCoroutinesApi::class)
-class ListProductsScreenTest {
+class ListShowsScreenTest {
 
     @get:Rule(order = 0)
     var hiltRule = HiltAndroidRule(this)
@@ -39,7 +39,7 @@ class ListProductsScreenTest {
 
 
     @Test
-    fun testListProductsScreen_Success() = runTest {
+    fun testListShowsScreen_Success() = runTest {
         composeTestRule.setContent {
             ListShowsScreen(
                 viewModel = ListShowsViewModel(fetchShowsUseCase)
