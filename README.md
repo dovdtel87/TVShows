@@ -29,7 +29,7 @@ To communicate the view with the view model, "StateFlow" has been used. The stat
 - `Error`: Shows an icon, a message, and a retry button.
 - `Content`: Displays the list of shows and if the list is shorted or not.
 
-The project has a repositories for handling the retrieval of the shows data. The project implements the repository pattern.
+The project has a repository for handling the retrieval of the shows data. The project implements the repository pattern.
 
 Between the ViewModel and Repository, another "UseCase" layer has been created to handle the different use cases that the app can handle. In this case a simple use case is provided `FetchShowsUseCase`
 
